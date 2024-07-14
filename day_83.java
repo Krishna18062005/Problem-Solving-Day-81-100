@@ -24,3 +24,23 @@ static int encrypt(int a){
     return m;
 }
 }
+import java.util.*;
+class Solution {
+    public String getSmallestString(String s) {
+        char[]ar=s.toCharArray();
+        List<String> list=new ArrayList<>();
+        list.add(s);
+        int i=0;
+        for(;i<ar.length-1;i++){
+            if(ar[i]%2==ar[i+1]%2){
+                  char t=ar[i];
+                  ar[i]=ar[i+1];
+                  ar[i+1]=t;
+            }
+            list.add(new String(ar));
+            ar=s.toCharArray();
+        }
+        Collections.sort(list);
+        return list.get(0);
+    }
+}
