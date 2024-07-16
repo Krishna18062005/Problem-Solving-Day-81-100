@@ -38,3 +38,35 @@ public class Hello {
 	    return ans;
 	}
 }
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		//American Keyboard -Same Row
+		
+		String[] str=new Scanner(System.in).nextLine().split(",");
+		String fr="QWERTYUIOP";
+		String sr="ASDFGHJKL";
+		String tr="ZXCVBNM";
+		fr=fr+fr.toLowerCase();
+		sr=sr+sr.toLowerCase();
+		tr=tr+tr.toLowerCase();
+		boolean print=false;
+		for(String i:str){
+		    int f,s,t;
+		    s=f=t=0;
+		    for(char j:i.toCharArray()){
+		        if(fr.contains(j+"")) f++;
+		        else if(sr.contains(j+"")) s++;
+		        else t++;
+		    }
+		    if(s==i.length()||t==i.length()||f==i.length()){
+		        System.out.print(i+" ");
+		        print=true;
+		    }
+		}
+		if(!print)
+		System.out.print(-1);
+
+	}
+}
