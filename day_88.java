@@ -1,3 +1,33 @@
+class Solution {
+    public List<Integer> luckyNumbers (int[][] m) {
+         List<Integer> ans=new ArrayList<>();
+         int[] rm=new int[m.length];
+         int[] cm=new int[m[0].length];
+         for(int i=0;i<m.length;i++){
+            rm[i]=Integer.MAX_VALUE;
+            for(int j=0;j<m[0].length;j++){
+                rm[i]=Math.min(m[i][j],rm[i]);
+            }
+         }
+         for(int i=0;i<m[0].length;i++){
+            cm[i]=Integer.MIN_VALUE;
+            for(int j=0;j<m.length;j++){
+                cm[i]=Math.max(m[j][i],cm[i]);
+            }
+         
+         }
+         System.out.println(Arrays.toString(rm));
+         System.out.print(Arrays.toString(cm));
+         for(int i=0;i<rm.length;i++){
+            for(int j=0;j<cm.length;j++)
+            if(rm[i]==cm[j]) ans.add(rm[i]);
+         }
+        
+         return ans;
+
+    }
+}
+
 import java.util.*;
 public class Hello {
 
