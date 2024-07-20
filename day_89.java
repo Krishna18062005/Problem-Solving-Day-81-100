@@ -29,3 +29,16 @@ public class Hello {
 
 	}
 }
+class Solution {
+    public String losingPlayer(int x, int y) {
+        int c1=x*75;
+        int c2=y*10;
+        int co=0;
+        while(c1>=75&&c2>=40){
+            c1-=75;
+            c2-=40;
+            co++;
+        }
+        return (co%2==1)?"Alice":"Bob";
+    }
+}
