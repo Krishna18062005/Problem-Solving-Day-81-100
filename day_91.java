@@ -40,3 +40,37 @@ public class Hello {
 
 	}
 }
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		//Password Rules & Strength
+		String str=new Scanner(System.in).next();
+		if(str.length()<8) {
+		    System.out.print("WEAK");
+		    return;
+		}
+		boolean r1,r2,r3,r4;
+		r1=r2=r3=r4=false;
+		
+		for(char i:str.toCharArray()){
+		    if(i>='a'&&i<='z'){
+		        r1=true;
+		    }
+		    else if(i>='A'&&i<='Z') {r2=true;}
+		    else if(i>='0'&&i<='9') r3=true;
+		    else
+		    r4=true;
+		}
+		r1=r1&&r2;
+		if(r1&&r2&&r3&&r4){
+		    System.out.print("STRONG");
+		}
+		else if(r1&&r3||r1&&r4||r3&&r4){
+		    System.out.print("GOOD");
+		}
+		else if((r1&&r2)||r3||r4) System.out.print("MEDIUM");
+		else System.out.print("WEAK");
+
+	}
+}
