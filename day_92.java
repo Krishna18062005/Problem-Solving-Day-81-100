@@ -21,3 +21,18 @@ class Solution {
         return true;
     }
 }
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		//Distinct Count -String Left Shift
+		
+		String st=new Scanner(System.in).next();
+		Set<String> set=new HashSet<>();
+		for(int i=0;i<st.length();i++){
+		    set.add(st.substring(i)+st.substring(0,i));
+		}
+		System.out.print(set.size());
+
+	}
+}
