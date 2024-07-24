@@ -27,3 +27,23 @@ public class Hello {
 	    return (int)Math.pow(2,i);
 	}
 }
+int isPerfectPalindrome(int N)
+{
+    int ps=0;
+for(int i=1;i*i<=N;i++){
+    if(i*i==N){
+        ps=1;
+    }
+}
+int d=0;
+if(ps==1){
+    d=0;
+    int t=N;
+    while(t>0){
+        d=d*10+t%10;
+        t/=10;
+    }
+}
+
+return d==N;
+}
