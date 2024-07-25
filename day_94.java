@@ -29,3 +29,31 @@ public class Hello {
 
 	}
 }
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		//Mirror & Water Images- Quadrant
+		Scanner sc=new Scanner(System.in);
+		int r=sc.nextInt();
+		int c=sc.nextInt();
+		int[][] mat=new int[r][c];
+		for(int i=0;i<r;i++){
+		    for(int j=0;j<c;j++){
+		        mat[i][j]=sc.nextInt();
+		    }
+		}
+		int[][] usa=new int[r][c];
+		for(int i=0;i<r/2;i++){
+		    for(int j=0;j<c/2;j++){
+		        usa[i][j]=usa[i][c-j-1]=usa[r-i-1][j]=usa[r-i-1][c-j-1]=mat[i][j];
+		    }
+		}
+		for(int i=0;i<r;i++){
+		    for(int j=0;j<c;j++){
+		        System.out.print(usa[i][j]+" ");
+		    }System.out.println();
+		}
+
+	}
+}
