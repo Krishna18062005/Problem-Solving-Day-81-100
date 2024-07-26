@@ -32,3 +32,29 @@ public class Hello {
 	}
 	
 }
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		//Length of Largest Substring
+		String st=new Scanner(System.in).next();
+		int c=0;
+		int m=0;
+		int i=0;
+	
+		for(;i<st.length()-2;i++){
+		    if(st.substring(i,i+2).equals("sr")){
+		        c++;
+		        i++;
+		    }
+		    else{
+		        c=0;
+		    }
+		    if(c>m){
+		        m=c;
+		    }
+		}
+		System.out.print(m*2);
+
+	}
+}
