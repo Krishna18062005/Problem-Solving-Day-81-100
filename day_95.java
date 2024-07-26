@@ -42,7 +42,7 @@ public class Hello {
 		int m=0;
 		int i=0;
 	
-		for(;i<st.length()-2;i++){
+		for(;i<st.length()-1;i++){
 		    if(st.substring(i,i+2).equals("sr")){
 		        c++;
 		        i++;
