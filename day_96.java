@@ -33,3 +33,35 @@ class Solution {
         return ans;
     }
 }
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+		//String - Pattern matching
+		Scanner sc=new Scanner(System.in);
+		char[] s1=sc.nextLine().toCharArray();
+		String[] s2=sc.nextLine().split(" ");
+		Set<Character> setc=new HashSet<>();
+		for(char i : s1) setc.add(i);
+		Set<String> sets=new HashSet<>();
+		for(String i: s2) sets.add(i);
+		
+		if(setc.size()!=sets.size()){
+		    System.out.print("NO");return;
+		}
+		HashMap<Character,String> map=new HashMap<>();
+		for(int i=0;i<s1.length;i++){
+		    if(map.containsKey(s1[i])){
+		        if(!(map.get(s1[i]).equals(s2[i]))){
+		            System.out.print("NO");
+		            return;
+		        }
+		    }
+		    else{
+		        map.put(s1[i],s2[i]);
+		    }
+		}
+		System.out.print("YES");
+
+	}
+}
